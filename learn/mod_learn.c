@@ -126,7 +126,7 @@ static int learn_handler(request_rec *r)
         print_int("r->status", r->status, r);
         print_int("r->method_number", r->method_number, r);
         print_string("r->method", r->method, r);
-        //
+        print_int("r->allowed", r->allowed, r);
         print_string("r->range", r->range, r);
         print_string("r->content_type", r->content_type, r);
         print_string("r->content_encoding", r->content_encoding, r);
