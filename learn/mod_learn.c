@@ -209,14 +209,6 @@ static char * itoa(int value) {
     return &result;
 }
 
-static void print_int(char *name, int value, request_rec *r) {
-    ap_rputs("<dt>", r);
-    ap_rputs(name, r);
-    ap_rputs("</dt><dd>", r);
-    ap_rputs(itoa(value), r);
-    ap_rputs("</dd>\n", r);
-}
-
 static void print_request_time(request_rec *r) {
     print_string("r->request_time", "TODO", r);
 }
