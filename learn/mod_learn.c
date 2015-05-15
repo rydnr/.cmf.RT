@@ -110,6 +110,10 @@ static void print_body_table(request_rec *r) {
     print_string("r->body_table", "TODO", r);
 }
 
+static void print_remaining(request_rec *r) {
+    print_string("r->remaining", "TODO", r);
+}
+
 static char * itoa(int value) {
     int LENGTH = (CHAR_BIT * sizeof(int) - 1) / 3 + 2;
     char result[LENGTH];
