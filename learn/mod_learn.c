@@ -194,6 +194,14 @@ static void print_useragent_addr(request_rec *r) {
     print_string("r->useragent_addr", "TODO", r);
 }
 
+static void print_trailers_in(request_rec *r) {
+    print_string("r->trailers_in", "TODO", r);
+}
+
+static void print_trailers_out(request_rec *r) {
+    print_string("r->trailers_out", "TODO", r);
+}
+
 static char * itoa(int value) {
     int LENGTH = (CHAR_BIT * sizeof(int) - 1) / 3 + 2;
     char result[LENGTH];
@@ -293,6 +301,8 @@ static int learn_handler(request_rec *r)
         print_finfo(r);
         print_useragent_addr(r);
         print_string("r->useragent_ip", r->useragent_ip, r);
+        print_trailers_in(r);
+        print_trailers_out(r);
         ap_rputs("</dl></body></html>\n", r);
     }
     return OK;
