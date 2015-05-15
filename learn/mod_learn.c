@@ -90,6 +90,10 @@ static void print_bytes_sent(request_rec *r) {
     print_string("r->bytes_sent", "TODO", r);
 }
 
+static void print_mtime(request_rec *r) {
+    print_string("r->mtime", "TODO", r);
+}
+
 static void print_main(request_rec *r) {
     print_string("r->main", "TODO", r);
 }
@@ -147,6 +151,7 @@ static int learn_handler(request_rec *r)
         print_allowed_methods(r);
         print_sent_bodyct(r);
         print_bytes_sent(r);
+        print_mtime(r);
         
         print_string("r->range", r->range, r);
         print_string("r->content_type", r->content_type, r);
