@@ -78,6 +78,10 @@ static void print_allowed_xmethods(request_rec *r) {
     print_string("r->allowed_xmethods", "TODO", r);
 }
 
+static void print_allowed_methods(request_rec *r) {
+    print_string("r->allowed_methods", "TODO", r);
+}
+
 static void print_main(request_rec *r) {
     print_string("r->main", "TODO", r);
 }
@@ -132,6 +136,8 @@ static int learn_handler(request_rec *r)
         print_string("r->method", r->method, r);
         print_int("r->allowed", r->allowed, r);
         print_allowed_xmethods(r);
+        print_allowed_methods(r);
+
         print_string("r->range", r->range, r);
         print_string("r->content_type", r->content_type, r);
         print_string("r->content_encoding", r->content_encoding, r);
