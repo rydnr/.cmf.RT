@@ -166,6 +166,18 @@ static void print_output_filters(request_rec *r) {
     print_string("r->output_filters", "TODO", r);
 }
 
+static void print_input_filters(request_rec *r) {
+    print_string("r->input_filters", "TODO", r);
+}
+
+static void print_proto_output_filters(request_rec *r) {
+    print_string("r->proto_output_filters", "TODO", r);
+}
+
+static void print_proto_input_filters(request_rec *r) {
+    print_string("r->proto_input_filters", "TODO", r);
+}
+
 static char * itoa(int value) {
     int LENGTH = (CHAR_BIT * sizeof(int) - 1) / 3 + 2;
     char result[LENGTH];
@@ -255,6 +267,9 @@ static int learn_handler(request_rec *r)
         print_string("r->log_id", r->log_id, r);
         print_htaccess(r);
         print_output_filters(r);
+        print_input_filters(r);
+        print_proto_output_filters(r);
+        print_proto_input_filters(r);
         
         print_string("r->useragent_ip", r->useragent_ip, r);
         ap_rputs("</dl></body></html>\n", r);
