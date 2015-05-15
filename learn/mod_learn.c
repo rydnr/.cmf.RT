@@ -103,7 +103,11 @@ static void print_clength(request_rec *r) {
 }
 
 static void print_kept_body(request_rec *r) {
-    print_string("r->kept_mody", "TODO", r);
+    print_string("r->kept_body", "TODO", r);
+}
+
+static void print_body_table(request_rec *r) {
+    print_string("r->body_table", "TODO", r);
 }
 
 static char * itoa(int value) {
@@ -167,6 +171,7 @@ static int learn_handler(request_rec *r)
         print_int("r->read_chunked", r->read_chunked, r);
         print_int("r->expecting_100", r->expecting_100, r);
         print_kept_body(r);
+        print_body_table(r);
         
         print_string("r->content_type", r->content_type, r);
         print_string("r->content_encoding", r->content_encoding, r);
