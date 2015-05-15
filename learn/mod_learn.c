@@ -55,7 +55,7 @@ static void print_string(const char *name, char *value, request_rec *r) {
 }
 
 static void print_pool(request_rec *r) {
-    print_string("r->pool", "TODO", r);
+    print_int("r->pool", &r->pool, r);
 }
 
 static void print_connection(request_rec *r) {
