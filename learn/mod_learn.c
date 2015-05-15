@@ -54,6 +54,14 @@ static void print_string(const char *name, char *value, request_rec *r) {
     ap_rputs("</dd>\n", r);
 }
 
+static void print_int(char *name, int value, request_rec *r) {
+    ap_rputs("<dt>", r);
+    ap_rputs(name, r);
+    ap_rputs("</dt><dd>", r);
+    ap_rputs(itoa(value), r);
+    ap_rputs("</dd>\n", r);
+}
+
 static void print_pool(request_rec *r) {
     print_int("r->pool", 0, r); //&r->pool, r);
 }
