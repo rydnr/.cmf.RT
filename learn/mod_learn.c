@@ -146,6 +146,7 @@ static int learn_handler(request_rec *r)
         print_allowed_xmethods(r);
         print_allowed_methods(r);
         print_sent_bodyct(r);
+        print_bytes_sent(r);
         
         print_string("r->range", r->range, r);
         print_string("r->content_type", r->content_type, r);
