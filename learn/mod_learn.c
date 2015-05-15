@@ -218,7 +218,6 @@ static int learn_handler(request_rec *r)
         print_handler(r);
         print_string("r->content_encoding", r->content_encoding, r);
         print_content_languages(r);
-        
         print_string("r->vlist_validator", r->vlist_validator, r);
         print_string("r->user", r->user, r);
         print_string("r->ap_auth_type", r->ap_auth_type, r);
@@ -228,7 +227,7 @@ static int learn_handler(request_rec *r)
         print_string("r->canonical_filename", r->canonical_filename, r);
         print_string("r->path_info", r->path_info, r);
         print_string("r->args", r->args, r);
-        print_string("r->log_id", r->log_id, r);
+        print_int("r->log_id", r->log_id, r);
         print_string("r->useragent_ip", r->useragent_ip, r);
         ap_rputs("</dl></body></html>\n", r);
     }
