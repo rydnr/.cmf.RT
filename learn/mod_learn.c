@@ -210,13 +210,6 @@ static void print_trailers_out(request_rec *r) {
     print_string("r->trailers_out", "TODO", r);
 }
 
-static char * itoa(int value) {
-    int LENGTH = (CHAR_BIT * sizeof(int) - 1) / 3 + 2;
-    char result[LENGTH];
-    snprintf(result, LENGTH, "%d", value);
-    return &result;
-}
-
 static void print_request_time(request_rec *r) {
     print_string("r->request_time", "TODO", r);
 }
