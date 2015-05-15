@@ -161,6 +161,7 @@ static int learn_handler(request_rec *r)
         print_int("r->chunked", r->chunked, r);
         print_int("r->read_body", r->read_body, r);
         print_int("r->read_chunked", r->read_chunked, r);
+        print_int("r->expecting_100", r->expecting_100, r);
         
         print_string("r->content_type", r->content_type, r);
         print_string("r->content_encoding", r->content_encoding, r);
