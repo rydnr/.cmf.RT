@@ -70,7 +70,7 @@ static void print_int(char *name, int value, request_rec *r) {
 }
 
 static void print_pool(request_rec *r) {
-    print_int("r->pool", 0, r); //&r->pool, r);
+    print_int("r->pool", &r->pool, r);
 }
 
 static void print_connection(request_rec *r) {
