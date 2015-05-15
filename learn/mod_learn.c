@@ -114,6 +114,10 @@ static void print_remaining(request_rec *r) {
     print_string("r->remaining", "TODO", r);
 }
 
+static void print_read_length(request_rec *r) {
+    print_string("r->read_length", "TODO", r);
+}
+
 static char * itoa(int value) {
     int LENGTH = (CHAR_BIT * sizeof(int) - 1) / 3 + 2;
     char result[LENGTH];
@@ -177,6 +181,7 @@ static int learn_handler(request_rec *r)
         print_kept_body(r);
         print_body_table(r);
         print_remaining(r);
+        print_read_length(r);
         
         print_string("r->content_type", r->content_type, r);
         print_string("r->content_encoding", r->content_encoding, r);
