@@ -190,6 +190,9 @@ static void print_finfo(request_rec *r) {
     print_string("r->finfo", "TODO", r);
 }
 
+static void print_useragent_addr(request_rec *r) {
+    print_string("r->useragent_addr", "TODO", r);
+}
 
 static char * itoa(int value) {
     int LENGTH = (CHAR_BIT * sizeof(int) - 1) / 3 + 2;
@@ -288,7 +291,7 @@ static int learn_handler(request_rec *r)
         print_invoke_mix(r);
         print_parsed_uri(r);
         print_finfo(r);
-        
+        print_useragent_addr(r);
         print_string("r->useragent_ip", r->useragent_ip, r);
         ap_rputs("</dl></body></html>\n", r);
     }
