@@ -36,7 +36,6 @@
 **  
 **    The sample page from mod_learn.c
 */ 
-
 #include "httpd.h"
 #include "http_config.h"
 #include "http_protocol.h"
