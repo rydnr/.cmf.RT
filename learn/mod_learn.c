@@ -270,7 +270,7 @@ static int learn_handler(request_rec *r)
         print_input_filters(r);
         print_proto_output_filters(r);
         print_proto_input_filters(r);
-        
+        print_int("r->no_cache", r->no_cache, r);
         print_string("r->useragent_ip", r->useragent_ip, r);
         ap_rputs("</dl></body></html>\n", r);
     }
