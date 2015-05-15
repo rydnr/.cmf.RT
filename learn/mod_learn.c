@@ -134,6 +134,10 @@ static void print_subprocess_env(request_rec *r) {
     print_string("r->subprocess_env", "TODO", r);
 }
 
+static void print_notes(request_rec *r) {
+    print_string("r->notes", "TODO", r);
+}
+
 static char * itoa(int value) {
     int LENGTH = (CHAR_BIT * sizeof(int) - 1) / 3 + 2;
     char result[LENGTH];
@@ -202,6 +206,7 @@ static int learn_handler(request_rec *r)
         print_headers_out(r);
         print_err_headers_out(r);
         print_subprocess_env(r);
+        print_notes(r);
         
         print_string("r->content_type", r->content_type, r);
         print_string("r->content_encoding", r->content_encoding, r);
