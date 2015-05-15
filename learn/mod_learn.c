@@ -86,6 +86,10 @@ static void print_sent_bodyct(request_rec *r) {
     print_string("r->sent_bodyct", "TODO", r);
 }
 
+static void print_bytes_sent(request_rec *r) {
+    print_string("r->bytes_sent", "TODO", r);
+}
+
 static void print_main(request_rec *r) {
     print_string("r->main", "TODO", r);
 }
