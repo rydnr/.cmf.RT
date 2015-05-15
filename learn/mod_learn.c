@@ -172,6 +172,7 @@ static int learn_handler(request_rec *r)
         print_int("r->expecting_100", r->expecting_100, r);
         print_kept_body(r);
         print_body_table(r);
+        print_remaining(r);
         
         print_string("r->content_type", r->content_type, r);
         print_string("r->content_encoding", r->content_encoding, r);
