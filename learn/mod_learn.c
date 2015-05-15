@@ -227,7 +227,8 @@ static int learn_handler(request_rec *r)
         print_string("r->canonical_filename", r->canonical_filename, r);
         print_string("r->path_info", r->path_info, r);
         print_string("r->args", r->args, r);
-        print_int("r->log_id", r->log_id, r);
+
+        print_string("r->log_id", r->log_id, r);
         print_string("r->useragent_ip", r->useragent_ip, r);
         ap_rputs("</dl></body></html>\n", r);
     }
