@@ -186,6 +186,11 @@ static void print_parsed_uri(request_rec *r) {
     print_string("r->parsed_uri", "TODO", r);
 }
 
+static void print_finfo(request_rec *r) {
+    print_string("r->finfo", "TODO", r);
+}
+
+
 static char * itoa(int value) {
     int LENGTH = (CHAR_BIT * sizeof(int) - 1) / 3 + 2;
     char result[LENGTH];
@@ -282,6 +287,7 @@ static int learn_handler(request_rec *r)
         print_int("r->no_local_copy", r->no_local_copy, r);
         print_invoke_mix(r);
         print_parsed_uri(r);
+        print_finfo(r);
         
         print_string("r->useragent_ip", r->useragent_ip, r);
         ap_rputs("</dl></body></html>\n", r);
