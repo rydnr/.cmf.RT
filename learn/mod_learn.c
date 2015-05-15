@@ -74,6 +74,10 @@ static void print_prev(request_rec *r) {
     print_string("r->prev", "TODO", r);
 }
 
+static void print_allowed_xmethods(request_rec *r) {
+    print_string("r->allowed_xmethods", "TODO", r);
+}
+
 static void print_main(request_rec *r) {
     print_string("r->main", "TODO", r);
 }
@@ -111,7 +115,7 @@ static int learn_handler(request_rec *r)
         print_connection(r);
         print_server(r);
         print_next(r);
-        print_prev(r); 
+        print_prev(r);
         print_main(r);
         print_string("r->the_request", r->the_request, r);
         print_int("r->assbackwards", r->assbackwards, r);
@@ -127,6 +131,7 @@ static int learn_handler(request_rec *r)
         print_int("r->method_number", r->method_number, r);
         print_string("r->method", r->method, r);
         print_int("r->allowed", r->allowed, r);
+        print_allowed_xmethods(r);
         print_string("r->range", r->range, r);
         print_string("r->content_type", r->content_type, r);
         print_string("r->content_encoding", r->content_encoding, r);
