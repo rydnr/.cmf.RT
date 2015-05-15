@@ -212,8 +212,9 @@ static int learn_handler(request_rec *r)
         print_notes(r);
         print_string("r->content_type", r->content_type, r);
         print_handler(r);
-
         print_string("r->content_encoding", r->content_encoding, r);
+        print_content_languages(r);
+        
         print_string("r->vlist_validator", r->vlist_validator, r);
         print_string("r->user", r->user, r);
         print_string("r->ap_auth_type", r->ap_auth_type, r);
