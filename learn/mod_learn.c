@@ -138,6 +138,10 @@ static void print_notes(request_rec *r) {
     print_string("r->notes", "TODO", r);
 }
 
+static void print_handler(request_rec *r) {
+    print_string("r->handler", "TODO", r);
+}
+
 static char * itoa(int value) {
     int LENGTH = (CHAR_BIT * sizeof(int) - 1) / 3 + 2;
     char result[LENGTH];
@@ -178,7 +182,6 @@ static int learn_handler(request_rec *r)
         print_int("r->proxyreq", r->proxyreq, r);
         print_int("r->header_only", r->header_only, r);
         print_int("r->proto_num", r->proto_num, r);
-        //        print_string("r->handler", r->handler, r);
         print_string("r->protocol", r->protocol, r);
         print_string("r->hostname", r->hostname, r);
         print_request_time(r);
@@ -207,8 +210,9 @@ static int learn_handler(request_rec *r)
         print_err_headers_out(r);
         print_subprocess_env(r);
         print_notes(r);
-        
         print_string("r->content_type", r->content_type, r);
+        print_handler(r);
+
         print_string("r->content_encoding", r->content_encoding, r);
         print_string("r->vlist_validator", r->vlist_validator, r);
         print_string("r->user", r->user, r);
