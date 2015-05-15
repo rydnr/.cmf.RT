@@ -146,6 +146,10 @@ static void print_content_languages(request_rec *r) {
     print_string("r->content_languages", "TODO", r);
 }
 
+static void print_per_dir_config(request_rec *r) {
+    print_string("r->per_dir_config", "TODO", r);
+}
+
 static char * itoa(int value) {
     int LENGTH = (CHAR_BIT * sizeof(int) - 1) / 3 + 2;
     char result[LENGTH];
@@ -229,6 +233,8 @@ static int learn_handler(request_rec *r)
         print_string("r->args", r->args, r);
         print_int("r->used_path_info", r->used_path_info, r);
         print_int("r->eos_sent", r->eos_sent, r);
+        print_per_dir_config(r);
+        
         print_string("r->log_id", r->log_id, r);
         print_string("r->useragent_ip", r->useragent_ip, r);
         ap_rputs("</dl></body></html>\n", r);
