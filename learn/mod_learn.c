@@ -74,6 +74,10 @@ static void print_prev(request_rec *r) {
     print_string("r->prev", "TODO", r);
 }
 
+static void print_main(request_rec *r) {
+    print_string("r->main", "TODO", r);
+}
+
 static void print_allowed_xmethods(request_rec *r) {
     print_string("r->allowed_xmethods", "TODO", r);
 }
@@ -94,8 +98,8 @@ static void print_mtime(request_rec *r) {
     print_string("r->mtime", "TODO", r);
 }
 
-static void print_main(request_rec *r) {
-    print_string("r->main", "TODO", r);
+static void print_clength(request_rec *r) {
+    print_string("r->clength", "TODO", r);
 }
 
 static char * itoa(int value) {
@@ -153,6 +157,7 @@ static int learn_handler(request_rec *r)
         print_bytes_sent(r);
         print_mtime(r);
         print_string("r->range", r->range, r);
+        print_clength(r);
         
         print_string("r->content_type", r->content_type, r);
         print_string("r->content_encoding", r->content_encoding, r);
