@@ -111,7 +111,7 @@ static int learn_handler(request_rec *r)
         print_connection(r);
         print_server(r);
         print_next(r);
-        print_prev(r);
+        print_prev(r); 
         print_main(r);
         print_string("r->the_request", r->the_request, r);
         print_int("r->assbackwards", r->assbackwards, r);
