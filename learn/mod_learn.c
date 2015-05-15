@@ -41,6 +41,13 @@
 #include "http_protocol.h"
 #include "ap_config.h"
 
+static char * itoa(int value) {
+    int LENGTH = (CHAR_BIT * sizeof(int) - 1) / 3 + 2;
+    char result[LENGTH];
+    snprintf(result, LENGTH, "%d", value);
+    return &result;
+}
+
 static void print_string(const char *name, char *value, request_rec *r) {
     ap_rputs("<dt>", r);
     ap_rputs(name, r);
