@@ -142,6 +142,10 @@ static void print_handler(request_rec *r) {
     print_string("r->handler", "TODO", r);
 }
 
+static void print_content_languages(request_rec *r) {
+    print_string("r->content_languages", "TODO", r);
+}
+
 static char * itoa(int value) {
     int LENGTH = (CHAR_BIT * sizeof(int) - 1) / 3 + 2;
     char result[LENGTH];
