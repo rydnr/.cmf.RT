@@ -152,8 +152,8 @@ static int learn_handler(request_rec *r)
         print_sent_bodyct(r);
         print_bytes_sent(r);
         print_mtime(r);
-        
         print_string("r->range", r->range, r);
+        
         print_string("r->content_type", r->content_type, r);
         print_string("r->content_encoding", r->content_encoding, r);
         print_string("r->vlist_validator", r->vlist_validator, r);
